@@ -1,0 +1,27 @@
+<div style="border:1px solid #ccc; background-color: #fff; margin-top:5px;" class="clearfix">
+    <a href="#" {{action 'showDetails'}} class='col-md-12'>
+      {{model.name}}
+    </a>
+
+  <div {{bind-attr class='isShowingDetails:col-md-12:hidden'}}>
+    <div class='col-md-6'>
+      <p class='text-muted'><em>{{model.name2}}</em></p>
+      <address>
+        {{model.street}} <br>
+        {{model.city}}, {{model.country}}
+      </address>
+      <dl>
+        <dt>Cost</dt>
+        <dd> {{model.cost}} </dd>
+        <dt>Notes</dt>
+        <dd> {{model.notes}} </dd>
+      </dl>
+    </div>
+    <div class='col-md-6'>
+      {{!view 'map' id="map" address=address}}
+      {{!view 'map' id="map" address=address}}
+    </div>
+  </div>
+
+</div>
+{{yield}}

@@ -1,0 +1,71 @@
+export default [
+  {
+    id: '1',
+    name: 'Veteran Henley',
+    name2: '',
+    street: '',
+    city: 'Henley',
+    region: 'London',
+    region_id: '1',
+    country: 'england',
+    country_id: '1',
+    address: '',
+    cost: 0,
+    notes: 'Races are on Friday, July 11th & Saturday, 12th. Check with Mike on race times.'
+  },
+  {
+    id: '2',
+    name: 'Weihenstephan Brewery',
+    name2: 'Bayerische Staatsbrauerei Weihenstephan',
+    street: 'Alte Akademie 2',
+    city: 'Freising',
+    region: 'Southern Germany',
+    region_id: '2',
+    country: 'germany',
+    country_id: '2',
+    address: 'Alte Akademie 2, Freising, Germany',
+    cost: 0,
+    notes: 'The brewery gives tours Mon - Wed.'
+  },
+  {
+    id: '3',
+    name: 'Andechs Monastary & Brewery',
+    name2: 'Klosterbrauerei Andechs',
+    street: 'Bergstraße 2',
+    city: 'Andechs',
+    region: 'Southern Germany',
+    region_id: '2',
+    country: 'germany',
+    address: 'Bergstraße 2, Andechs, Germany',
+    cost: 0,
+    notes: 'The brewery gives tours Mon - Wed.'
+  },
+  {
+    id: '4',
+    name: 'Tegernsee Beer Hall & Abbey',
+    name2: 'Tegernsee BrŠustuben',
+    street: 'Schloßpl. 1',
+    city: 'Tegernsee',
+    region: 'Southern Germany',
+    region_id: '2',
+    country: 'germany',
+    country_id: '2',
+    address: 'Schloßpl. 1, Tegernsee, Germany',
+    cost: 0,
+    notes: 'Starting at Schliersee, hiking through the alps to a Benedictine monastary & beer hall in Tegernsee.'
+  },
+  {
+    id: '5',
+    name: 'Hike-in Cabins',
+    name2: '',
+    street: '',
+    city: '',
+    region: 'Wallonia',
+    region_id:  '7',
+    country: 'belgium',
+    country_id: '3',
+    address: '',
+    cost: 0,
+    notes: 'Stay at a hike-in cabin. more info at www.trekkershutten.nl/eng/ .'
+  }
+];

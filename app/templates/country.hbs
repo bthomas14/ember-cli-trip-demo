@@ -1,0 +1,17 @@
+<div class="container">
+  <div class='row'>
+    <div class='col-md-3'>
+      <strong>Regions</strong>
+      <div class="list-group">
+        {{#each region in model}}
+          {{#link-to 'country.region' region.id classNames='list-group-item'}}
+            {{region.name}}
+          {{/link-to}}
+        {{/each}}
+      </div>
+    </div>
+    <div class="col-md-9">
+      {{outlet}}
+    </div>
+  </div>
+</div>
