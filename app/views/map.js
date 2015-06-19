@@ -5,9 +5,11 @@ export default Ember.View.extend({
   latitude: null,
   longitude: null,
 
-  /*didInsertElement: function() {
+  didInsertElement: function() {
+    console.log('in MapShowComponent.didInsertElement()');
+    // Initialize geocoder
     var geocoder = new google.maps.Geocoder();
-    console.log("name is => " + this.name);
+    console.log('address => ' + this.address);
     var address = this.name+", "+this.city+", "+this.country;
     var that = this;
     geocoder.geocode( { 'address': address}, function(results, status) {
@@ -43,7 +45,7 @@ export default Ember.View.extend({
       }
     });
   },
-*/
+/*
   geocode: function() {
     var geocoder = new google.maps.Geocoder();
     var address = this.address;
@@ -107,5 +109,5 @@ export default Ember.View.extend({
         });
       }
     }.observes('latitude', 'longitude') //these are bound to lat/lng of Event
-
+    */
 });

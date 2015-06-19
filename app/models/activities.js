@@ -9,6 +9,7 @@ export default DS.Model.extend({
   region_id: DS.belongsTo('region'),
   country: DS.attr('string'),
   country_id: DS.belongsTo('country'),
+  address: DS.attr('string'),
   cost: DS.attr('number'),
   notes: DS.attr('string'),
 });
