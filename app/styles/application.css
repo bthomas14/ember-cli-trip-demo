@@ -21,12 +21,22 @@
 .activity-item {
   margin-top: 10px;
   margin-right: 20px;
-  padding: 5px;
+  padding: 7px 10px;
   border:1px solid #ccc;
   background-color: #fff;
 }
+
+.activity-item.active {
+  background-color: #eee;
+  -webkit-box-shadow: 0px 0px 10px -2px rgba(231,166,26,0.72);
+  -moz-box-shadow: 0px 0px 10px -2px rgba(231,166,26,0.72);
+  box-shadow: 0px 0px 10px -2px rgba(231,166,26,0.72);
+}
 .activity-item:hover {
-  background-color: #ddd;
+  background-color: #eee;
+  -webkit-box-shadow: 0px 0px 10px -2px rgba(231,166,26,0.72);
+  -moz-box-shadow: 0px 0px 10px -2px rgba(231,166,26,0.72);
+  box-shadow: 0px 0px 10px -2px rgba(231,166,26,0.72);
   cursor: pointer;
 }
 .activity-item:hover a {
@@ -34,7 +44,9 @@
 }
 .activity-item a:hover {
   text-decoration: none;
-  //background-color: #ccc;
+}
+.activity-item > .details {
+  //background-color: #F0EEE9;
 }
 
 .row-space-1 {

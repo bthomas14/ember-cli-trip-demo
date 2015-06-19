@@ -1,20 +1,30 @@
-<div class="activity-item clearfix">
-  <div {{action 'showDetails' activity}} class='col-sm-12'> {{activity.name}} </div>
+<div {{action 'showDetails' activity}} {{bind-attr class='isShowingDetails:active :activity-item :clearfix'}}>
+  <div class='item-name'> {{activity.name}} </div>
 
-{{#if isShowingDetails}}
-    <p class='text-muted'>
-      <em>{{activity.name2}}</em>
-    </p>
-    <address>
-      {{activity.street}}
-      <br> {{activity.city}}, {{activity.country}}
-    </address>
-    <dl>
-      <dt>Cost</dt>
-      <dd> {{activity.cost}} </dd>
-      <dt>Notes</dt>
-      <dd> {{activity.notes}} </dd>
-    </dl>
-{{/if}}
+  {{#if isShowingDetails}}
+    <div class='details'>
+      <p class='text-muted'>
+        <em>{{activity.name2}}</em>
+      </p>
+      <address>
+        {{activity.street}}
+        <br> {{activity.city}}, {{activity.country}}
+      </address>
+
+      <ul class='list-unstyled'>
+        {{#if activity.cost}}
+          <li>Cost: {{activity.cost}} </li>
+        {{/if}}
+        {{#if activity.website}}
+          <li>Website: {{activity.website}} </li>
+        {{/if}}
+      </ul>
+
+      <dl>
+        <dt>Notes</dt>
+        <dd> {{activity.notes}} </dd>
+      </dl>
+    </div>
+  {{/if}}
 </div>
 {{yield}}
