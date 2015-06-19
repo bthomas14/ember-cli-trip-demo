@@ -21,7 +21,7 @@
 export default [
   {
     id: '1',
-    name: 'Veteran Henley',
+    name: 'Veteran Henley Regatta',
     name2: '',
     street: 'Henley Royal Regatta Headquarters, Henley Bridge',
     city: 'Henley-on-Thames',
@@ -45,7 +45,6 @@ export default [
     region: 'Southern Germany',
     region_id: '2',
     country: 'germany',
-    country_id: '2',
     address: 'Alte Akademie 2, Freising, Germany',
     cost: 0,
     notes: 'The brewery gives tours Mon - Wed.'
@@ -72,7 +71,6 @@ export default [
     region: 'Southern Germany',
     region_id: '2',
     country: 'germany',
-    country_id: '2',
     address: 'Schloßpl. 1, Tegernsee, Germany',
     cost: 0,
     notes: 'Starting at Schliersee, hiking through the alps to a Benedictine monastary & beer hall in Tegernsee.'

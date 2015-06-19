@@ -5,11 +5,16 @@
   <div class='col-md-6'>
     <h4>Activities</h4>
     {{#each activity in activities}}
-      {{activity-details activity=activity action='showMarker' param=activity}}
+      {{list-details item=activity action='showMarker' param=activity}}
     {{else}}
       No plans yet.
     {{/each}}
     <h4>Lodging</h4>
+    {{#each lodging in lodgings}}
+      {{list-details item=lodging action='showMarker' param=lodging}}
+    {{else}}
+      No plans yet.
+    {{/each}}
   </div>
 
   {{view 'large-map' class='map-big col-md-6' activities=activities selectedMarker='highlightedMarker'}}

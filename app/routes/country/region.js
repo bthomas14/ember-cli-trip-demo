@@ -10,8 +10,14 @@ export default Ember.Route.extend({
     this._super(controller, model); // default render template logic
 
     console.log('in region.setupController()');
-    var result = this.store.find('activities', { region_id: model.get('id')});
+    /*var result = Ember.RSVP.hash({
+      activities: this.store.find('activities', { region_id: model.get('id') }),
+      lodgings: this.store.find('lodging', { region_id: model.get('id') })
+    })*/
+    var activityResults = this.store.find('activities', { region_id: model.get('id')});
+    var lodgingResults = this.store.find('lodging', { region_id: model.get('id') });
     var region_controller = this.controllerFor('country.region');
-    region_controller.set('activities', result);
+    region_controller.set('activities', activityResults);
+    region_controller.set('lodgings', lodgingResults);
   }
 });
