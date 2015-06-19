@@ -2,14 +2,14 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   isShowingDetails: false,
-  highlightedMarker: null,
-
+  
+  click: function(param) {
+    console.log('activity-details component clicked!');
+    this.sendAction('action', this.get('param'));
+  },
   actions: {
-    showDetails: function(param) {
+    showDetails: function() {
       this.toggleProperty('isShowingDetails');
-      this.sendAction('action', this.get('param'));
-      this.set('highlightedMarker', param.get('id'));
-    },
-
+    }
   }
 });

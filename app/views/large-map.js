@@ -76,20 +76,16 @@ export default Ember.View.extend({
 
   }.observes('activities.@each'),
 
-  setMarkers: function() {
-
-  },
-
   highlightMarker: function() {
-    console.log('selectedMarker ' + this.get('selectedMarker') + ' was updated');
+    console.log('markerId ' + this.get('controller').get('selectedMarker') + ' was updated');
     for (var key in this.markers) {
-      if (key == this.get('selectedMarker')) {
+      if (key == this.get('controller').get('selectedMarker')) {
         this.markers[key].set('icon', 'https://maps.google.com/mapfiles/ms/icons/yellow-dot.png');
       } else {
         this.markers[key].set('icon', 'https://maps.google.com/mapfiles/ms/icons/red-dot.png');
       }
     }
-  }.observes('selectedMarker')
+  }.observes('controller.selectedMarker')
 
 
 });

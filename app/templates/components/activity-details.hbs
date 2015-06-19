@@ -1,23 +1,20 @@
-<div style="border:1px solid #ccc; background-color: #fff; margin-top:5px;" class="clearfix">
-    <a href="#" {{action 'showDetails' model}}>
-      {{model.name}}
-    </a>
+<div class="activity-item clearfix">
+  <div {{action 'showDetails' activity}} class='col-sm-12'> {{activity.name}} </div>
 
-  <div {{bind-attr class='isShowingDetails:col-md-12:hidden'}}>
-    <div class='col-md-6'>
-      <p class='text-muted'><em>{{model.name2}}</em></p>
-      <address>
-        {{model.street}} <br>
-        {{model.city}}, {{model.country}}
-      </address>
-      <dl>
-        <dt>Cost</dt>
-        <dd> {{model.cost}} </dd>
-        <dt>Notes</dt>
-        <dd> {{model.notes}} </dd>
-      </dl>
-    </div>
-  </div>
-
+{{#if isShowingDetails}}
+    <p class='text-muted'>
+      <em>{{activity.name2}}</em>
+    </p>
+    <address>
+      {{activity.street}}
+      <br> {{activity.city}}, {{activity.country}}
+    </address>
+    <dl>
+      <dt>Cost</dt>
+      <dd> {{activity.cost}} </dd>
+      <dt>Notes</dt>
+      <dd> {{activity.notes}} </dd>
+    </dl>
+{{/if}}
 </div>
 {{yield}}

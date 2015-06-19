@@ -5,36 +5,12 @@
   <div class='col-md-6'>
     <h4>Activities</h4>
     {{#each activity in activities}}
-      <div class="activity-item clearfix">
-        <a href="#" {{action 'showDetails' activity}}>
-        {{activity.name}}
-      </a>
-
-        <div {{bind-attr class='isShowingDetails:col-md-12:hidden'}}>
-          <div class='col-md-6'>
-            <p class='text-muted'>
-              <em>{{activity.name2}}</em>
-            </p>
-            <address>
-              {{activity.street}}
-              <br> {{activity.city}}, {{activity.country}}
-            </address>
-            <dl>
-              <dt>Cost</dt>
-              <dd> {{activity.cost}} </dd>
-              <dt>Notes</dt>
-              <dd> {{activity.notes}} </dd>
-            </dl>
-          </div>
-        </div>
-
-      </div>
-      {{!activity-details model=activity action='hover' param=activity}}
-      {{else}}
-        No plans yet.
+      {{activity-details activity=activity action='showMarker' param=activity}}
+    {{else}}
+      No plans yet.
     {{/each}}
     <h4>Lodging</h4>
   </div>
 
-  {{view 'large-map' class='map-big col-md-6' activities=activities selectedMarker='highlightMarker'}}
+  {{view 'large-map' class='map-big col-md-6' activities=activities selectedMarker='highlightedMarker'}}
 </div>
