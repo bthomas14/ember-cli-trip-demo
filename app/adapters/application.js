@@ -6,8 +6,8 @@ import Ember from 'ember';
 });*/
 
 export default DS.FixtureAdapter.extend({
-  //simulateRemoteResponse: true,
-  //latency: 200,
+  simulateRemoteResponse: true,
+  latency: 200,
 
   queryFixtures: function(fixtures, query, type) {
     var key = Ember.keys(query)[0];

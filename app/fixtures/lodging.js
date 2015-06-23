@@ -34,10 +34,10 @@ export default [
   },
   {
     id: "2",
-    name: "Airbnb - Charming Victorian by the River",
+    name: "En Suite Double Bedroom near centre (Airbnb)",
     name2: "",
-    address: "",
-    street: "",
+    address: "61 Northfield End, Henley-on-Thames, RG9 2JJ, United Kingdom",
+    street: "61 Northfield End",
     city: "Henley-on-Thames",
     region: "Henley-on-Thames",
     region_id: "9",
@@ -45,7 +45,7 @@ export default [
     cost: 0,
     currency: "pounds",
     website: "",
-    notes: ""
+    notes: "Our reservation is from Tue, Jul 7th - Sun, Jul 12."
   },
   {
     id: "3",

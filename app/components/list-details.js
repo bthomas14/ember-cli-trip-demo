@@ -5,7 +5,7 @@ export default Ember.Component.extend({
 
   // on clicking component, send params to showMarker action on regionController
   click: function(param) {
-    console.log('activity-details component clicked!');
+    console.log('sending list-details param for id =>' + this.get('param').id);
     this.sendAction('action', this.get('param'));
   },
   actions: {
