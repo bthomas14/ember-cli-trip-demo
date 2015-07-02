@@ -19,3 +19,11 @@
 # Ignore Dependencies
 /frontend/bower_components/*/**
 /frontend/node_modules/*/**
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage/*
+/libpeerconnection.log
+npm-debug.log
+testem.log
