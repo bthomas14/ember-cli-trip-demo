@@ -1,0 +1,14 @@
+<!doctype html>
+<html dir="ltr" lang="<%= I18n.locale %>">
+  <head>
+    <meta charset="UTF-8">
+    <title>Ember</title>
+    <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?sensor=false&libraries=geometry"></script>
+    <%= stylesheet_link_tag 'frontend' %>
+    <%= include_ember_script_tags :frontend %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

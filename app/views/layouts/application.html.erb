@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ember Rails Trip | Application.html.erb</title>
+  <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?sensor=false&libraries=geometry"></script>
+  <%= stylesheet_link_tag    'application' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+<div id='ember-app'>
+</div>
+
+</body>
+</html>

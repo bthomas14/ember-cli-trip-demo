@@ -1,0 +1,26 @@
+<h3>Add a Place</h3>
+
+<form {{action "createPlace" on="submit"}}>
+  <div>
+    <label>
+      Name
+      <br> {{input type="text" value=name}}
+    </label>
+  </div>
+  <div>
+    <label>
+      Address
+      <br> {{input type="text" value=address}}
+    </label>
+  </div>
+  <div>
+    <label>
+      Region
+      <br> {{input type="text" value=region}}
+    </label>
+  </div>
+  <button>Save</button>
+</form>
+
+
+{{yield}}

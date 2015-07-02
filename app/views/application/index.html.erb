@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ember Rails Trip | Index.html.erb</title>
+  <%= include_ember_script_tags :frontend %>
+  <%= include_ember_stylesheet_tags :frontend %>
+  <%= stylesheet_link_tag    'application' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<%= yield %>
+<div id='ember-app'>
+</div>
+
+</body>
+</html>
