@@ -3,10 +3,12 @@ ActiveAdmin.register Place do
                 :name2,
                 :place_type,
                 :street,
-                :city,
-                :region_id,
+                :village,
+                :city_id,
+                :post_code,
                 :country_id,
                 :address,
+                :image,
                 :cost,
                 :currency,
                 :hours,
@@ -26,23 +28,44 @@ ActiveAdmin.register Place do
     template_object: ActiveAdminImport::Model.new(
       hint: "file will be imported with such header format: 'body','title','author'",
       force_encoding: "ISO-8859-1",
-      csv_headers: ["id","name","name2","place_type","street","city","address","cost","currency","hours","event_dates","website","media_desc","media_src","notes","country_id", "region_id", "updated_at", "created_at"]
+      csv_headers: ["id","name","name2","place_type","street","city","address","cost","currency","hours","event_dates","website","media_desc","media_src","notes","country_id", "updated_at", "created_at"]
     )
   })
 
+  # Create sections on the index screen
+  scope :all, default: true
 
-  #action_item :only => :index do
-  #  link_to 'Upload CSV', :action => 'upload_csv'
-  #end
+  # Filterable attributes on the index screen
+  filter :name
+  #filter :country_id, as: :select, collection: ->{ Place.country_id }
+  filter :city
+  filter :created_at
+  filter :country_id do |place|
+    auto_link place.country
+  end
 
-  #collection_action :upload_csv do
-  #  render "admin/csv/upload_csv"
-  #end
+  # Customize columns displayed on the index screen in the table
+  index do
+    column :name
+    column :city
+    column :country
+    column :place_type
+    column :media_src
+    column :latitude
+    column :longitude
+    #column :place_type
+    #column :address
+    #column "Cost", sortable: :cost do |place|
+    #  number_to_currency place.cost
+    #end
+    actions
+  end
 
-  #collection_action :import_csv, :method => :post do
-  #  CsvDb.convert_save("place", params[:dump][:file])
-  #  redirect_to :action => :index, :notice => "CSV imported successfully!"
-  #end
-
+  form do |f|
+    f.semantic_errors # shows errors on :base
+    f.input :place_type, :label => 'Type', :as => :select, :collection => ["brewery", "tap room", "restaurant"]
+    f.inputs :name, :name2, :street, :village, :post_code, :city, :country, :website, :media_src, :notes
+    f.actions         # adds the 'Submit' and 'Cancel' buttons
+  end
 
 end

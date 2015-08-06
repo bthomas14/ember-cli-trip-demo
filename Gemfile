@@ -12,6 +12,7 @@ gem "rack-cors", require: "rack/cors"
 gem 'country_select', github: 'stefanpenner/country_select'
 gem "active_admin_import" , '2.1.2'
 
+gem 'geocoder'
 gem 'friendly_id', '~> 5.0.0'
 #gem "grape", "0.9.0"
 #gem "grape-active_model_serializers"

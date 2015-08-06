@@ -1,12 +1,14 @@
 <div class="container">
   <div class='row'>
     <div class='col-md-3'>
-      <div class='h4 strong row-space-1 col-sm-12'>{{country.name}} Regions</div>
+      <div class='h4 strong row-space-1 col-sm-12'>{{country.name}} Cities</div>
       <div class="list-group">
-        {{#each region in model}}
-          {{#link-to 'country.region' region.id classNames='list-group-item'}}
-            {{region.name}}
+        {{#each city in model}}
+        <div {{action "hover" city on="mouseEnter"}}>
+          {{#link-to 'country.city' city.id classNames='list-group-item'}}
+              <div class='item-name'>{{city.name}}</div>
           {{/link-to}}
+          </div>
         {{/each}}
       </div>
     </div>

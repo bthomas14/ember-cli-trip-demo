@@ -1,0 +1,40 @@
+<div class='details'>
+  <h4>{{model.name}}</h4>
+  <p class='text-muted'>{{model.name2}}</p>
+
+  {{#if model.mediaSrc}}
+    <div class="col-sm-12">
+      <img {{bind-attr src='model.mediaSrc'}} height='200px' width='auto'>
+    </div>
+  {{/if}}
+
+  <p>
+    <strong>Type: </strong> {{model.place_type}}
+  </p>
+
+  <strong>Address:</strong>
+  <address>
+    {{#if model.address}}
+    {{model.street}}, <br>
+    {{model.post_code}} {{model.city_id.name}}, {{model.city_id.country_id.name}}
+  {{/if}}
+  </address>
+
+  <ul class='list-unstyled'>
+    {{#if model.cost}}
+      <li>Cost: {{model.cost}} </li>
+    {{/if}}
+    {{#if item.website}}
+      <li>Website: <a {{bind-attr href='model.website'}} target='_blank'>{{item.website}}</a> </li>
+    {{/if}}
+  </ul>
+
+  {{#if model.notes}}
+    <dl>
+      <dt>Notes: </dt>
+      <dd>
+        <em> {{model.notes}} </em>
+      </dd>
+    </dl>
+  {{/if}}
+</div>

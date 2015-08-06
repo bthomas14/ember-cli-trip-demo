@@ -1,0 +1,24 @@
+<h2>{{model.name}}</h2>
+
+<div class="col-md-12">
+  {{view 'large-map' class='map-big col-md-12' places=breweryList selectedMarker=selectedMarker}}
+</div>
+
+<div class="col-md-4">
+  <h4>Breweries &amp; Tap Rooms</h4>
+  <div class="list-group">
+  {{#each item in breweryList}}
+    {{#link-to 'country.city.place' item.id classNames='list-group-item'}}
+      <div class='item-name' {{action 'showMarker' item}}>
+        {{item.name}}
+      </div>
+    {{/link-to}}
+  {{else}}
+    No breweries in database.
+  {{/each}}
+  </div>
+</div>
+
+<div class="col-md-8">
+  {{outlet}}
+</div>

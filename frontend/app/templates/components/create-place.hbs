@@ -16,8 +16,14 @@
   <div>
     <label>
       Region
-      <br> {{input type="text" value=region}}
+      <br> {{view 'select' content=regions value=selectedRegion}}
     </label>
+  </div>
+  <div>
+    <label>
+      Notes
+    </label>
+    {{textarea rows=5 value=notes}}
   </div>
   <button>Save</button>
 </form>

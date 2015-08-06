@@ -4,18 +4,19 @@ class PlaceSerializer < ActiveModel::Serializer
               :name2,
               :place_type,
               :street,
-              :city,
+              :village,
+              :city_id,
+              :post_code,
               :address,
+              :image,
               :cost,
               :currency,
               :hours,
-              :event_dates,
               :website,
               :media_desc,
               :media_src,
               :notes,
-              :region_id
+              :latitude,
+              :longitude
 
-  #belongs_to :region
-  #belongs_to :country
 end

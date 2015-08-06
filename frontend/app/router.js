@@ -6,8 +6,10 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('country', { path: '/countries/:country_id' }, function() {
-    this.route('region', { path: '/:region_id' });
+  this.route('country', { path: '/:country_id' }, function() {
+    this.route('city', { path: '/:city_id'}, function() {
+      this.route('place', { path: '/:place_id' });
+    });
   });
 });
 

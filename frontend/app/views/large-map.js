@@ -3,11 +3,11 @@ import Ember from 'ember';
 export default Ember.View.extend({
   //templateName: 'views/large-map',
   map: null,
-  selectedMarker: null,
   markers: {},
   geocoder: null,
+  selectedMarker: null,
 
-  didInsertElement: function() {
+  /*didInsertElement: function() {
     console.log('largeMapView.didInsertElement called');
 
     // initialize geocoder & map, then call rerenderMap().
@@ -94,7 +94,117 @@ export default Ember.View.extend({
         this.markers[key].set('icon', 'https://maps.google.com/mapfiles/ms/icons/red-dot.png');
       }
     }
-  }.observes('controller.selectedMarker') // watch for selectedMarker change on regionController
+  }.observes('controller.selectedMarker')*/ // watch for selectedMarker change on regionController
 
+  reRenderMap: function() {
+    console.log('re-rendering map');
+    var mapOptions = {
+      zoom: 15,
+      draggable: false,
+      panControl: true,
+      zoomControl: true,
+      scrollwheel: false,
+      //optimized: false,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+    var map = new google.maps.Map(this.$().get(0), mapOptions);
+    this.set('map', map); //save for future updates
+
+    var bounds = new google.maps.LatLngBounds();
+
+    var locs = new Array();
+
+    for (var i = 0; i < 50; i++) {
+      if (this.places.objectAt(i) == null) {
+        break;
+      }
+      var place = this.places.objectAt(i);
+      if (place.get('latitude') == null) {
+        console.log("listing: " + place.get('name') + " has no location");
+        continue;
+      }
+
+      var loc = new google.maps.LatLng(place.get('latitude'), place.get('longitude'));
+      bounds.extend(loc);
+      locs.push(loc);
+
+      var marker = new google.maps.Marker({
+        position: loc,
+        map: map,
+        scrollwheel: false,
+        draggable: false,
+        title: place.get('name'),
+        icon: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
+        contentString: '<div id="content">'+
+          '<h5 id="firstHeading" class="firstHeading">' + this.title + '</h5>'+
+          '<div id="bodyContent">'+
+          '<p></p>'+
+          '</div>'+
+          '</div>'
+      });
+      //this.set("marker" + i, marker);
+      this.markers[place.get('id')] = marker;
+
+      var infowindow = new google.maps.InfoWindow({
+          content: marker.contentString
+      });
+
+      google.maps.event.addListener(marker, 'click', function() {
+        infowindow.open(map, marker);
+        marker.icon = 'https://maps.google.com/mapfiles/ms/icons/yellow-dot.png';
+      });
+
+      console.log("listing " + i + ": " + place.get('name') + ", lat: " + place.get('latitude') + ", lon: " + place.get('longitude'));
+    }
+
+    //  Fit these bounds to the map
+    map.fitBounds(bounds);
+    //  Adjust zoom
+    var zoom = map.getZoom();
+    //console.log("zoom is "+ zoom)
+    map.setZoom(zoom > 18 ? 18 : zoom);
+
+    // resize trigger: necessary?
+    google.maps.event.trigger(map, 'resize');
+    map.setZoom(map.getZoom());
+
+  }.observes('places.@each'),
+
+  didInsertElement: function() {
+    //console.log('largeMapView.didInsertElement called');
+    this.reRenderMap();
+    this.$().css({
+      display: "block",
+      top: "0px",
+      right: "12px"
+    });
+  },
+
+  highlightMarker: function() {
+    console.log('selectedMarker ' + this.get('selectedMarker') + ' was updated');
+    for (var key in this.markers) {
+      if (key == this.get('selectedMarker')) {
+        console.log("Marker #" + key + " is a yellow marker.");
+        this.markers[key].set('icon', 'https://maps.google.com/mapfiles/ms/icons/yellow-dot.png');
+      } else {
+        console.log("Marker #" + key + " is a red marker.");
+        this.markers[key].set('icon', 'https://maps.google.com/mapfiles/ms/icons/red-dot.png');
+      }
+    }
+  }.observes('selectedMarker'),
+
+  /*infoWindow: function() {
+    var contentString = '<div id="content">'+
+      '<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
+      '<div id="bodyContent">'+
+      '<p></p>'+
+      '</div>'+
+      '</div>';
+
+    var infowindow = new google.maps.InfoWindow({
+        content: contentString
+    });
+  }.observes('marker').on('click')*/
 
 });

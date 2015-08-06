@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150701180849) do
+ActiveRecord::Schema.define(version: 20150806044938) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -51,6 +51,19 @@ ActiveRecord::Schema.define(version: 20150701180849) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "cities", force: :cascade do |t|
+    t.string   "name"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.integer  "region_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name2"
+    t.integer  "country_id"
+  end
+
+  add_index "cities", ["country_id"], name: "index_cities_on_country_id"
+
   create_table "countries", force: :cascade do |t|
     t.string   "name"
     t.string   "image"
@@ -63,18 +76,32 @@ ActiveRecord::Schema.define(version: 20150701180849) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "events", force: :cascade do |t|
+    t.string   "name"
+    t.string   "name2"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.float    "cost"
+    t.string   "currency"
+    t.string   "website"
+    t.text     "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "city_id"
+  end
+
+  add_index "events", ["city_id"], name: "index_events_on_city_id"
+
   create_table "places", force: :cascade do |t|
     t.string   "name"
     t.string   "name2"
     t.string   "street"
-    t.string   "city"
-    t.text     "address"
+    t.string   "address"
     t.float    "cost"
     t.string   "currency"
-    t.text     "hours"
-    t.string   "event_dates"
+    t.string   "hours"
     t.string   "website"
-    t.text     "media_desc"
+    t.string   "media_desc"
     t.string   "media_src"
     t.text     "notes"
     t.datetime "created_at"
@@ -82,8 +109,15 @@ ActiveRecord::Schema.define(version: 20150701180849) do
     t.string   "place_type"
     t.integer  "region_id"
     t.integer  "country_id"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.integer  "post_code"
+    t.integer  "city_id"
+    t.string   "image"
+    t.string   "village"
   end
 
+  add_index "places", ["city_id"], name: "index_places_on_city_id"
   add_index "places", ["country_id"], name: "index_places_on_country_id"
   add_index "places", ["region_id"], name: "index_places_on_region_id"
 
