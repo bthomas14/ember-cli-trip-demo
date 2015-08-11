@@ -1,7 +1,7 @@
 # Ember-store
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+An EmberCLI & Ruby on Rails demo app utilizing the google maps API and ActiveAdmin. 
+Some information borrowed from the European Beer Guide website (http://www.europeanbeerguide.net/).
 
 ## Prerequisites
 
