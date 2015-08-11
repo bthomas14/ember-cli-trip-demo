@@ -1,4 +1,4 @@
-# Ember-store
+# Ember-CLI-Trip-Demo
 
 An EmberCLI & Ruby on Rails demo app utilizing the google maps API and ActiveAdmin. 
 Some information borrowed from the European Beer Guide website (http://www.europeanbeerguide.net/).
