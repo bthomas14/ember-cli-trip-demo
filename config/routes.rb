@@ -20,9 +20,4 @@ Rails.application.routes.draw do
   # Set root path
   root 'ember#index'
 
-  #resources :places
-  #resources :regions, path: 'regions'
-  #resources :countries
-
-
 end

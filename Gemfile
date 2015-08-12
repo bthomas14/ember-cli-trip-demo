@@ -22,10 +22,10 @@ gem 'friendly_id', '~> 5.0.0'
 #gem "rack-cors", require: "rack/cors"
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+#gem 'jquery-rails'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
+#gem 'jbuilder', '~> 2.0'
 
 # Turbolinks makes following links in your web application faster (use with Rails Asset Pipeline)
 #gem 'turbolinks'
@@ -51,6 +51,7 @@ gem 'active_model_serializers'
 
 # rails server
 gem 'puma'
+#gem 'thin'
 
 group :development do
   gem "better_errors"
@@ -80,7 +81,6 @@ end
 
 group :production do
   gem "pg"
-
   # deploy to heroku
   gem 'rails_12factor', '0.0.2'
 end
