@@ -3,6 +3,4 @@ EmberCLI.configure do |c|
   c.app :frontend,
     path: Rails.root.join('frontend').to_s,
     build_timeout: 15
-  #c.app :frontend, exclude_ember_deps: "jquery"
-  #c.app :admin, exclude_ember_deps: ["jquery", "handlebars"]
 end
