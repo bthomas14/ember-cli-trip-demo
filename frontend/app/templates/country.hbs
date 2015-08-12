@@ -3,15 +3,16 @@
     <div class='col-md-3'>
       <div class='h4 strong row-space-1 col-sm-12'>{{country.name}} Cities</div>
       <div class="list-group">
-        {{#each city in model}}
-        <div {{action "hover" city on="mouseEnter"}}>
+        {{#each city in sortedCities}}
           {{#link-to 'country.city' city.id classNames='list-group-item'}}
-              <div class='item-name'>{{city.name}}</div>
-          {{/link-to}}
+          <div {{action "hover" city on="mouseEnter"}} class='item-name'>
+            {{city.name}}
           </div>
+          {{/link-to}}
         {{/each}}
       </div>
     </div>
+    
     <div class="col-md-9">
       {{outlet}}
     </div>

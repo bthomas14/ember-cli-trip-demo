@@ -100,7 +100,7 @@ export default Ember.View.extend({
     console.log('re-rendering map');
     var mapOptions = {
       zoom: 15,
-      draggable: false,
+      draggable: true,
       panControl: true,
       zoomControl: true,
       scrollwheel: false,

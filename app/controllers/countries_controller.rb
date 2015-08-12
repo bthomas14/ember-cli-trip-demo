@@ -5,8 +5,9 @@ class CountriesController < ApplicationController
   end
 
   def show
-    #@country = Country.where(name: param[:name])
     render json: Country.find(params[:id])
+    #puts "in CountryController.show, params[:id] => " + params[:id].to_s + "\n"
+    #render json: Country.find_by_slug(params[:id])
   end
 
   private

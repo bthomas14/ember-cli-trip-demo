@@ -3,15 +3,13 @@ Rails.application.routes.draw do
   resources :events
 
   resources :countries
-
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
-
   #resources :regions
   resources :cities
   resources :places
-  #get 'places', to: 'places#index'
-  #resources :places
+  #get 'places', to: 'places#show'
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
 
   # Initialize geocoder
   get 'address' => 'address#show'

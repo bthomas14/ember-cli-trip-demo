@@ -1,7 +1,6 @@
 class CitiesController < ApplicationController
 
   def index
-    #render json: City.all
     puts "in index, params[:country_id] => " + params[:country_id].to_s + "\n"
     @cities = City.where(country_id: params[:country_id])
     puts "@params => " + params[:country_id].to_s + "\n"

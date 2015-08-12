@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150806044938) do
+ActiveRecord::Schema.define(version: 20150806235741) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20150806044938) do
     t.datetime "updated_at", null: false
     t.string   "name2"
     t.integer  "country_id"
+    t.string   "slug"
   end
 
   add_index "cities", ["country_id"], name: "index_cities_on_country_id"
@@ -69,6 +70,7 @@ ActiveRecord::Schema.define(version: 20150806044938) do
     t.string   "image"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
 
   create_table "csv_dbs", force: :cascade do |t|
@@ -115,6 +117,7 @@ ActiveRecord::Schema.define(version: 20150806044938) do
     t.integer  "city_id"
     t.string   "image"
     t.string   "village"
+    t.string   "slug"
   end
 
   add_index "places", ["city_id"], name: "index_places_on_city_id"

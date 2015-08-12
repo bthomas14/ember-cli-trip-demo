@@ -2,39 +2,55 @@
   <h4>{{model.name}}</h4>
   <p class='text-muted'>{{model.name2}}</p>
 
-  {{#if model.mediaSrc}}
-    <div class="col-sm-12">
-      <img {{bind-attr src='model.mediaSrc'}} height='200px' width='auto'>
+  <div class="row">
+    {{#if model.mediaSrc}}
+      <div class="col-sm-6">
+        <img {{bind-attr src='model.mediaSrc'}} width='100%' height='auto'>
+      </div>
+    {{/if}}
+
+    <div class="col-sm-6">
+      <div class="row-space-2">
+        <strong>Type: </strong> {{model.place_type}}
+      </div>
+
+      <div class="row-space-2">
+        <strong>Address:</strong> <br>
+        <address>
+          {{#if model.address}}
+            {{model.street}}, <br>
+            {{model.post_code}} {{model.city_id.name}}, {{model.city_id.country_id.name}}
+          {{/if}}
+        </address>
+      </div>
+
+      {{#if item.website}}
+      <div>
+        <b>Website:</b>
+        <a {{bind-attr href='model.website'}} target='_blank'>{{item.website}}</a>
+      </div>
+      {{/if}}
+    </div>
+  </div>
+
+  {{#if model.notes}}
+    <div class="row">
+      <dl class="col-sm-12">
+        <dt>Notes: </dt>
+        <dd>
+          <em> {{model.notes}} </em>
+        </dd>
+      </dl>
     </div>
   {{/if}}
 
-  <p>
-    <strong>Type: </strong> {{model.place_type}}
-  </p>
-
-  <strong>Address:</strong>
-  <address>
-    {{#if model.address}}
-    {{model.street}}, <br>
-    {{model.post_code}} {{model.city_id.name}}, {{model.city_id.country_id.name}}
+  {{#if model.onTap}}
+    <div class="row">
+      <strong>Comments</strong>
+      <ul>
+          <li>Only okay.</li>
+      </ul>
+    </div>
   {{/if}}
-  </address>
 
-  <ul class='list-unstyled'>
-    {{#if model.cost}}
-      <li>Cost: {{model.cost}} </li>
-    {{/if}}
-    {{#if item.website}}
-      <li>Website: <a {{bind-attr href='model.website'}} target='_blank'>{{item.website}}</a> </li>
-    {{/if}}
-  </ul>
-
-  {{#if model.notes}}
-    <dl>
-      <dt>Notes: </dt>
-      <dd>
-        <em> {{model.notes}} </em>
-      </dd>
-    </dl>
-  {{/if}}
 </div>

@@ -11,6 +11,11 @@ Router.map(function() {
       this.route('place', { path: '/:place_id' });
     });
   });
+  /*this.route('country', { path: '/:country_slug' }, function() {
+    this.route('city', { path: '/:city_slug'}, function() {
+      this.route('place', { path: '/:place_id' });
+    });
+  });*/
 });
 
 export default Router;
