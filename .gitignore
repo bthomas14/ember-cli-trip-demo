@@ -17,8 +17,8 @@
 /tmp
 
 # Ignore Dependencies
-/frontend/bower_components/*/**
-/frontend/node_modules/*/**
+frontend/bower_components/
+frontend/node_modules/
 
 # misc
 /.sass-cache
@@ -27,3 +27,22 @@
 /libpeerconnection.log
 npm-debug.log
 testem.log
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+*.gem
+.bundle
+Gemfile.lock
+gemfiles/*.lock
+pkg/*
+*.rbc
+*.log
+test/dummy/tmp
+.DS_Store
+*.swp
+*.swo
