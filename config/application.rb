@@ -9,8 +9,8 @@ Bundler.require(*Rails.groups)
 module EmberRailsTrip
   class Application < Rails::Application
     config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
-    #config.assets.paths << Rails.root.join("vendor", "assets", "fonts")
-    #config.assets.paths << Rails.root.join("vendor", "assets", "stylesheets")
+    config.assets.paths << Rails.root.join("vendor", "assets", "fonts")
+    config.assets.paths << Rails.root.join("vendor", "assets", "stylesheets")
 
     #config.path.add File.join('app', 'api'), glob: File.join('**', '*.rb')
     #config.autoload_paths += Dir[Rails.root.join('app', 'api', '*')]
