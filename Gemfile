@@ -14,21 +14,7 @@ gem "active_admin_import" , '2.1.2'
 
 gem 'geocoder'
 gem 'friendly_id', '~> 5.0.0'
-#gem "grape", "0.9.0"
-#gem "grape-active_model_serializers"
-#gem "grape-swagger-rails"
 
-#gem "hashie-forbidden_attributes"
-#gem "rack-cors", require: "rack/cors"
-
-# Use jquery as the JavaScript library
-#gem 'jquery-rails'
-
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-#gem 'jbuilder', '~> 2.0'
-
-# Turbolinks makes following links in your web application faster (use with Rails Asset Pipeline)
-#gem 'turbolinks'
 # communicate with ember-cli
 gem 'ember-cli-rails'
 
@@ -54,7 +40,7 @@ gem 'puma'
 #gem 'thin'
 
 group :development do
-  gem "better_errors"
+  #gem "better_errors"
   gem "meta_request"
   gem "quiet_assets"
   gem "spring"
