@@ -1,7 +1,7 @@
-# Ember-store
+# Ember-CLI-Trip-Demo
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+An EmberCLI & Ruby on Rails demo app utilizing the google maps API and ActiveAdmin. 
+Some information borrowed from the European Beer Guide website (http://www.europeanbeerguide.net/).
 
 ## Prerequisites
 
@@ -22,12 +22,12 @@ You will need the following things properly installed on your computer.
 
 ## Running / Development
 
-* `ember server`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+* `rails server`
+* Visit your app at [http://localhost:3000](http://localhost:3000).
 
 ### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
+Rails code generation: 'rails g ...'
+Ember code generation: `ember g ...'
 
 ### Running Tests
 
